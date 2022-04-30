@@ -4,32 +4,32 @@ Parameters:
   S3Bucket:
     Type: String
     Description: Enter the name of the S3 bucket with the lambda code
-    Default: template-bucket-2022
+    
 
   S3Key:
     Type: String
     Description: Enter the key of the S3 bucket with the lambda code 
-    Default: 'ConfigCleanup.zip'
+    
 
   OrganizationUnit:
     Type: String
     Description: Enter the ID of the organization unit you want to use for this account
-    Default: ou-i5um-pqzgoyqf
+    
 
   ProductID:
     Type: String
     Description: Enter the ID of the service catalog product for account factory
-    Default: prod-5q3gsj562bsz6
+    
 
   ProvisioningArtifactID:
     Type: String
     Description: Enter the provisioning artifact ID from service catalog. This is the service catalog product version.
-    Default: pa-lsspt4j5hnlf4
+   
 
   SourceOrganizationUnit:
     Type: String
     Description: ID of the root organization unit
-    Default: r-i5um
+    
   
 Resources:
   ControlTower:
