@@ -63,16 +63,29 @@ Resources:
             - sts:AssumeRole
       Path: "/"
       ManagedPolicyArns:
-        - "arn:aws:iam::aws:policy/AdministratorAccess"
+        - "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
       Policies:
-      - PolicyName: STSlambda
+      - PolicyName: lambdaPolicy
         PolicyDocument:
           Version: '2012-10-17'
           Statement:
           - Effect: Allow
             Action: 
-              - sts:*
+              - config:DeleteDeliveryChannel
+              - "config:DescribeConfigurationRecorders"
+              - "config:DescribeDeliveryChannels"
+              - "config:DeleteConfigurationRecorder"
             Resource: '*'
+          - Effect: Allow
+            Action: 
+              - organizations:DescribeAccount
+              - organizations:MoveAccount
+              - servicecatalog:ProvisionProduct
+            Resource: '*'
+          - Effect: Allow
+            Action: 
+              - sts:AssumeRole
+            Resource: 'arn:aws:iam::*:role/AWSControlTowerExecution'
 
   EventRule: 
     Type: AWS::Events::Rule
