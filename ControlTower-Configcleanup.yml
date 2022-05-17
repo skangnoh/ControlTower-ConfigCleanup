@@ -1,3 +1,8 @@
+This is I usually add at the very top of cloudformation template
+21:58
+#  (c) 2020 Amazon Web Services, Inc. or its affiliates. All Rights Reserved. This AWS Content is provided subject to the terms of the AWS
+#   Customer Agreement available at https://aws.amazon.com/agreement or other writtenagreement between Customer
+#   and Amazon Web Services, Inc.
 ---
 AWSTemplateFormatVersion: '2010-09-09'
 Parameters:
